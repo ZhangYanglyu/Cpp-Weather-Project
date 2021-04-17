@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/zhangyang/Documents/CppProject/Cpp-weather forecast project/build",
+  "command": "/bin/clang++-10 -g -o CMakeFiles/project3.dir/main.cpp.o -c \"/home/zhangyang/Documents/CppProject/Cpp-weather forecast project/main.cpp\"",
+  "file": "/home/zhangyang/Documents/CppProject/Cpp-weather forecast project/main.cpp"
+}
+]
