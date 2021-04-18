@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <vector>
+#include <cstring>
 #include <curl/curl.h>
 #include <jsoncpp/json/json.h>
 
@@ -33,9 +35,18 @@ int main(int, char**)
     //todo 4: perform Get command
     curl_easy_perform(handle);
 
-    std::cout << response << std::endl;
+    // std::cout << response << std::endl;
 
     //todo : Json decode
+    Json::Value root;
+    Json::Reader reader;;
+
+    if (reader.parse(response, root))
+    {
+        std::cout << "Location: " << root["results"][0]["location"]["name"].asCString() << std::endl;
+        std::cout << "Today weather: " << root["results"][0]["now"]["text"].asCString() << std::endl;
+        std::cout << "Today temperature: " << root["results"][0]["now"]["temperature"].asCString() << " ^C" << std::endl;
+    }
 
     //todo 5: 
     curl_easy_cleanup(handle);
